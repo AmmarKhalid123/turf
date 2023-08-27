@@ -305,7 +305,7 @@ export function polygon<P = GeoJsonProperties>(
 
     for (let j = 0; j < ring[ring.length - 1].length; j++) {
       // Check if first point of Polygon contains two numbers
-      if (ring[ring.length - 1][j] !== ring[0][j]) {
+      if (!ring[ring.length - 1][j].isEqualTo(ring[0][j])) {
         throw new Error("First and last Position are not equivalent.");
       }
     }
